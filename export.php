@@ -10,6 +10,9 @@ if (!$conn) {
 // Query to retrieve all transactions
 $query = "SELECT * FROM transactions";
 $result = mysqli_query($conn, $query);
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
 
 // Create an array to store the transaction data
 $transaction_data = array();
