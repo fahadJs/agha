@@ -46,11 +46,11 @@ echo "<table>";
 echo "<tr><th>Date</th><th>Type</th><th>Category</th><th>Amount</th><th>Description</th></tr>";
 foreach ($transaction_data as $row) {
     echo "<tr>";
-    echo "<td>".$row['date']."</td>";
-    echo "<td>".$row['type']."</td>";
-    echo "<td>".$row['category']."</td>";
-    echo "<td>".$row['amount']."</td>";
-    echo "<td>".$row['description']."</td>";
+    echo "<td>".htmlspecialchars($row['date'])."</td>";
+    echo "<td>".htmlspecialchars($row['type'])."</td>";
+    echo "<td>".htmlspecialchars($row['category'])."</td>";
+    echo "<td>".htmlspecialchars($row['amount'])."</td>";
+    echo "<td>".htmlspecialchars($row['description'])."</td>";
     echo "</tr>";
 }
 echo "</table>";
