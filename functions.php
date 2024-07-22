@@ -16,6 +16,11 @@ function curl_post($url, $data) {
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
     $response = curl_exec($ch);
+    if ($response === false) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        throw new Exception("cURL error: $error");
+    }
     curl_close($ch);
     return $response;
 }
