@@ -43,10 +43,10 @@ $result = $stmt->get_result();
     </tr>
     <?php while ($row = $result->fetch_assoc()) {?>
     <tr>
-        <td><?php echo $row['date'];?></td>
-        <td><?php echo $row['type'];?></td>
-        <td><?php echo $row['amount'];?></td>
-        <td><?php echo $row['description'];?></td>
+        <td><?php echo htmlspecialchars($row['date']);?></td>
+        <td><?php echo htmlspecialchars($row['type']);?></td>
+        <td><?php echo htmlspecialchars($row['amount']);?></td>
+        <td><?php echo htmlspecialchars($row['description']);?></td>
     </tr>
     <?php }?>
 </table>
